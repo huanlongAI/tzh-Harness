@@ -1,18 +1,18 @@
 # Cowork Toolkit（引用声明）
 
-> **真源**: tzhos-toolkit Cowork Plugin v0.6.0
-> **安装**: Cowork → 插件管理 → tzhos-toolkit
+> **Layer 2 真源**: tzh-ppr-skills.plugin（`_governance/tzh-ppr-skills.plugin`）
+> **Layer 1 状态**: 规划中（tzhos-toolkit 插件尚未实现）
 
-本目录不存放 SKILL.md 原文。Skill 定义随插件包分发。
+本目录不存放 SKILL.md 原文。Skill 定义随插件包或 tzh-agent-configs 仓库分发。
 
-## Session Skill（Layer 1）
+## Session Skill（Layer 1 · 规划中）
 
-| Skill | 真源 |
-|-------|------|
-| session-init | tzhos-toolkit 插件包 |
-| cowork-healthcheck | tzhos-toolkit 插件包 |
-| codex-bridge | tzhos-toolkit 插件包 |
-| failure-log | tzhos-toolkit 插件包 |
+| Skill | 状态 | 说明 |
+|-------|------|------|
+| session-init | 规划中 | Cowork session 初始化 |
+| cowork-healthcheck | 规划中 | 环境诊断 |
+| codex-bridge | 规划中 | 宿主机 CLI 派发桥（依赖宿主机通信） |
+| failure-log | 规划中 | 结构化失败归档 |
 
 ## 审计协议（Layer 2）
 
