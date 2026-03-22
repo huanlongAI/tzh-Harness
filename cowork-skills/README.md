@@ -48,6 +48,7 @@ bash cowork-skills/install.sh
 | `git-worktree-isolation` | superpowers using-git-worktrees | tzhOS 多节点特化 + .gitignore HARD-GATE |
 | `code-review-reception` | superpowers receiving-code-review | 来源分级表（创始人/外部/AI）+ 反谄媚 HARD-GATE |
 | `skill-writing-tdd` | superpowers writing-skills + 6 个辅助文件 | Harness P7 结构规范 + 说服力写作原则 |
+| `planning-with-files` | OthmanAdi/planning-with-files (zh 版) + 模板 + 脚本 | Hook 优化（排除只读工具）+ P4a 验证门禁 + P4b 反合理化自检 + 四状态报告 + 创始人升级链 |
 
 ## 更新机制
 

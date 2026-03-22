@@ -22,6 +22,13 @@ declare -A SKILL_MAP=(
   ["skill-writing-tdd"]="writing-skills"
 )
 
+# 非 superpowers 来源的 Skill（独立上游跟踪）
+# planning-with-files 上游：OthmanAdi/planning-with-files (skills/planning-with-files-zh/)
+# 同步方式：手动对比 + 差异合入，不走 superpowers 自动流程
+declare -A EXTERNAL_SKILLS=(
+  ["planning-with-files"]="OthmanAdi/planning-with-files:skills/planning-with-files-zh"
+)
+
 MODE="evaluate"
 if [[ "${1:-}" == "--apply" ]]; then
   MODE="apply"
