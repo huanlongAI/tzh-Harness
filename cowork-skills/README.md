@@ -48,7 +48,7 @@ bash cowork-skills/install.sh
 | `git-worktree-isolation` | superpowers using-git-worktrees | tzhOS 多节点特化 + .gitignore HARD-GATE |
 | `code-review-reception` | superpowers receiving-code-review | 来源分级表（创始人/外部/AI）+ 反谄媚 HARD-GATE |
 | `skill-writing-tdd` | superpowers writing-skills + 6 个辅助文件 | Harness P7 结构规范 + 说服力写作原则 |
-| `planning-with-files` | OthmanAdi/planning-with-files (zh 版) + 模板 + 脚本 | Hook 优化（排除只读工具）+ P4a 验证门禁 + P4b 反合理化自检 + 四状态报告 + 创始人升级链 |
+| `planning-with-files` | OthmanAdi/planning-with-files (zh 版) — 方案 3 裁剪 | 三文件→两文件（goal.md + findings.md），进度交 TodoWrite；Hook 注入 goal.md（~10 行）；P4b 反合理化 + TodoWrite 协作契约 |
 
 ## 更新机制
 
@@ -72,5 +72,6 @@ bash cowork-skills/install.sh
 
 ## 版本
 
+- v0.3.0 (2026-03-22) — planning-with-files 集成（方案 3：进度交 TodoWrite，保留 Hook 注意力 + findings.md）
 - v0.2.0 (2026-03-22) — 重构：以 superpowers 原版为基础层，Harness 增量作为叠加层
 - v0.1.0 (2026-03-22) — 首次发布（已废弃：从 _sandbox 重写而非基于原版）
