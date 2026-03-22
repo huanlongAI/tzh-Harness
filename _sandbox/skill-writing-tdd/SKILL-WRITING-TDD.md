@@ -123,7 +123,20 @@ Eval 结果只有 PASS / FAIL，不接受「部分通过」。
 
 ---
 
-## 6. Change Policy
+## 6. 转正追踪（Promotion Tracking）
+
+**转正条件**：≥2 个 Skill 使用本规范的 RED-GREEN-REFACTOR 循环完成编写并通过验证。
+
+| # | Skill | 日期 | 阶段 | 结论 |
+|---|-------|------|------|------|
+| 1 | systematic-debugging v0.1.0 | 2026-03-22 | RED（首次编写，尚未 Agent 实测） | 结构符合 §3 模板，待 GREEN 验证 |
+| 2 | parallel-agent-dispatch v0.1.0 | 2026-03-22 | RED（首次编写，尚未 Agent 实测） | 结构符合 §3 模板，待 GREEN 验证 |
+
+**当前状态**：2/2 案例已进入 RED 阶段。需要实际 Agent 运行验证后完成 GREEN + REFACTOR，方可满足转正条件。
+
+---
+
+## 7. Change Policy
 
 - Patch：文案修订、示例增补
 - Minor：新增规则条目、新增 Eval
