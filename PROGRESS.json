@@ -232,7 +232,39 @@
         "Live ruling merge E2E with real governance ruling on tzhOS",
         "Phase 4 planning: monitoring, alerting escalation, auto-remediation"
       ]
+    },
+    {
+      "id": 21,
+      "date": "2026-03-29",
+      "node": "NODE-M",
+      "title": "Ruling Hook fix + live ruling merge E2E verification",
+      "work_packages": [
+        "Bug fix: ruling-merge-hook.yml Unicode trigger indexer bug (em-dash in comments, 3rd instance)",
+        "Bug fix: matrix_change extraction fails on Markdown code blocks (sed empty-line stop)",
+        "Deployed pure ASCII ruling-hook.yml with new filename (commits ed2b302, 91be5bf)",
+        "Real governance rulings: R-0082 (SEC-007), R-0083 (GPC-007), R-0084 (SEC-008)",
+        "Live E2E: ruling PR #10 merge -> Ruling Hook dispatch 204 -> matrix-updater -> Issue #5 (LLM fallback)",
+        "Cleanup: Issue #5 closed, 3 ruling branches deleted, local clone removed"
+      ],
+      "summary": "Fixed two bugs in the ruling-merge-hook pipeline: (1) Unicode trigger indexer failure (third instance of same root cause - em-dash in YAML comments), fixed by creating pure ASCII ruling-hook.yml with new filename; (2) matrix_change extraction stopping at empty lines between Markdown headers and code fences, fixed with grep-chain filtering. Verified full E2E with three real governance rulings (R-0082/R-0083/R-0084). Pipeline successfully dispatched to matrix-updater which created Issue #5 via LLM fallback path. All test artifacts cleaned up.",
+      "artifacts": [
+        "tzhOS/.github/workflows/ruling-hook.yml (ed2b302, 91be5bf)",
+        "tzhOS/RULINGS.md (R-0082, R-0083, R-0084 appended)",
+        "sentinel-shared Issue #5 (auto-created by LLM fallback, closed)"
+      ],
+      "key_decisions": [
+        "All workflow YAML must be pure ASCII (3 instances confirm pattern)",
+        "New filename required after delete to avoid stale workflow ID cache",
+        "sed range stop changed from empty-line to next ### header for Markdown robustness",
+        "LLM fallback path (transient API failure -> auto Issue) confirmed working"
+      ],
+      "status": "completed",
+      "next_steps": [
+        "Revoke classic PAT (user action)",
+        "Update sentinel-ops skill with ruling-hook fix knowledge",
+        "Phase 4 planning: monitoring escalation, auto-remediation"
+      ]
     }
   ],
-  "phase_status": "Phase 1-3 COMPLETE + Security Hardened: Fine-grained PAT deployed, org secrets configured, full E2E verified"
+  "phase_status": "Phase 1-3 COMPLETE + Security Hardened + Ruling Hook E2E Verified: Full pipeline from ruling PR merge to sentinel dispatch operational"
 }
