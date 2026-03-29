@@ -5,12 +5,12 @@
       "id": 13,
       "date": "2026-03-29",
       "node": "NODE-M",
-      "title": "Sentinel Phase 1 — Multi-repo deployment",
+      "title": "Sentinel Phase 1 \u2014 Multi-repo deployment",
       "work_packages": [
         "WP-0: Repo migration to huanlongAI org (16 repos)",
-        "WP-1.5: tzhOS caller template (119-line inline → 25-line reusable)",
+        "WP-1.5: tzhOS caller template (119-line inline \u2192 25-line reusable)",
         "WP-2: D-4~D-6 precheck scripts (directory, capability-source, brand-token)",
-        "WP-3: LLM review layer — real Claude API integration",
+        "WP-3: LLM review layer \u2014 real Claude API integration",
         "WP-4: Batch deployment to all 16 huanlongAI repos"
       ],
       "summary": "Deployed Consistency Sentinel CI/CD across entire huanlongAI org. Hub-and-spoke architecture: sentinel-shared (public) hosts reusable workflow + scripts; each repo has ~25-line caller + .sentinel/config.yaml. Four config profiles: governance, infra, app, library. Six deterministic prechecks (D-1~D-6) + LLM review layer with graceful degradation.",
@@ -37,7 +37,7 @@
       "id": 14,
       "date": "2026-03-29",
       "node": "NODE-M",
-      "title": "Custom Skills — sentinel-ops & governance-workflow",
+      "title": "Custom Skills \u2014 sentinel-ops & governance-workflow",
       "work_packages": [
         "sentinel-ops skill: Sentinel CI/CD operational knowledge base (313 lines, ~2900 tokens)",
         "governance-workflow skill: Governance automation workflows (231 lines, ~2050 tokens)"
@@ -60,7 +60,7 @@
       "node": "NODE-M",
       "title": "WP-6: Governance doc alignment",
       "work_packages": [
-        "WP-6.1: CONSEN-SPEC-001 v1.0→v1.1 (8 targeted updates)",
+        "WP-6.1: CONSEN-SPEC-001 v1.0\u2192v1.1 (8 targeted updates)",
         "WP-6.2: REPO-MAP-001 v1.0 (new, 16-repo directory)",
         "WP-6.3: CLAUDE.md Sentinel section across all repos + sentinel-shared CLAUDE.md"
       ],
@@ -85,7 +85,7 @@
         "WP-5.3: End-to-end validation (4 iterations to resolve permission issues)",
         "D-2 fix: terminology_exclude_patterns for governance spec files"
       ],
-      "summary": "Implemented CONSEN-SPEC §5.2 crystallization automation. Fixed D-2 false positive.",
+      "summary": "Implemented CONSEN-SPEC \u00a75.2 crystallization automation. Fixed D-2 false positive.",
       "artifacts": [
         "tzhOS/.github/workflows/crystallization.yml (aee27f0, 63e2532)",
         "tzhOS/.github/scripts/crystallize-ruling.sh (aee27f0)",
@@ -93,7 +93,7 @@
         "sentinel-shared/scripts/precheck-terminology.sh (80a7fce)"
       ],
       "key_decisions": [
-        "MCP push_files cannot write .github/workflows/ (403) — use git push via osascript",
+        "MCP push_files cannot write .github/workflows/ (403) \u2014 use git push via osascript",
         "Label attachment made best-effort to prevent PR creation failure",
         "Org + repo workflow permissions must both enable Actions PR creation"
       ],
@@ -110,9 +110,9 @@
         "WP-8.1: cascade-verify.yml design (fan-out + collect-results two-job architecture)",
         "WP-8.2: Deploy cascade-verify.yml to sentinel-shared (7cd5266)",
         "WP-8.3: Batch update 16 downstream callers with repository_dispatch trigger",
-        "WP-8.4: End-to-end test — 16/16 dispatch success, collect-results passed"
+        "WP-8.4: End-to-end test \u2014 16/16 dispatch success, collect-results passed"
       ],
-      "summary": "Implemented cross-repo cascade verification for the Sentinel hub-and-spoke system. When sentinel-shared scripts or reusable workflow change, cascade-verify.yml auto-dispatches sentinel-cascade events to all 16 downstream repos, waits 120s, then collects pass/fail results. Failures auto-create an issue in sentinel-shared. All 16 downstream repo callers updated with repository_dispatch trigger.",
+      "summary": "Implemented cross-repo cascade verification for the Sentinel hub-and-spoke system.",
       "artifacts": [
         "sentinel-shared/.github/workflows/cascade-verify.yml (7cd5266)",
         "16 repos: consistency-sentinel.yml updated with repository_dispatch",
@@ -125,7 +125,7 @@
         "alerting": "Auto-create issue with cascade-failure label if any repo fails"
       },
       "key_decisions": [
-        "CASCADE_TOKEN (PAT with repo scope) required for cross-repo dispatch — GITHUB_TOKEN is repo-scoped",
+        "CASCADE_TOKEN (PAT with repo scope) required for cross-repo dispatch",
         "repository_dispatch event type 'sentinel-cascade' added to all downstream callers",
         "120s wait is sufficient for most sentinel runs (avg ~15s per run)",
         "Base64 transfer pattern used for osascript to avoid heredoc/triple-quote escaping issues"
@@ -149,16 +149,16 @@
         "WP-9.2: Dashboard e2e run SUCCESS",
         "WP-9.3: Matrix-updater e2e pipeline correct, CASCADE_TOKEN fix applied"
       ],
-      "summary": "Deployed matrix auto-update pipeline and Sentinel dashboard. CRITICAL DISCOVERY: Unicode chars in YAML prevent GitHub trigger indexer from registering workflow_dispatch. Fix: pure ASCII + fresh filenames. Both workflows verified. tzhOS dispatch URL updated.",
+      "summary": "Deployed matrix auto-update pipeline and Sentinel dashboard. CRITICAL DISCOVERY: Unicode chars in YAML prevent GitHub trigger indexer from registering workflow_dispatch.",
       "artifacts": [
         "sentinel-shared/.github/workflows/matrix-updater.yml (6452708, cbee061)",
         "sentinel-shared/.github/workflows/dashboard.yml (6452708)",
         "tzhOS/.github/workflows/ruling-merge-hook.yml (bf79527)"
       ],
       "architecture": {
-        "matrix_update_flow": "ruling PR merge → ruling-merge-hook extracts matrix_change → workflow_dispatch to sentinel-shared → LLM drafts matrix update → creates PR",
-        "dashboard_flow": "daily cron 08:00 UTC → query 16 repos for sentinel run status → STEP_SUMMARY + auto-issue on failure",
-        "dispatch_method": "workflow_dispatch (not repository_dispatch) — public repo compatibility"
+        "matrix_update_flow": "ruling PR merge \u2192 ruling-merge-hook extracts matrix_change \u2192 workflow_dispatch to sentinel-shared \u2192 LLM drafts matrix update \u2192 creates PR",
+        "dashboard_flow": "daily cron 08:00 UTC \u2192 query 16 repos for sentinel run status \u2192 STEP_SUMMARY + auto-issue on failure",
+        "dispatch_method": "workflow_dispatch (not repository_dispatch) \u2014 public repo compatibility"
       },
       "key_decisions": [
         "Unicode chars prevent GitHub trigger indexer registration",
@@ -185,7 +185,7 @@
         "P2b: governance-workflow skill updated with Phase 2 knowledge (231->309 lines)",
         "E2E: Full matrix-updater pipeline verified with LLM draft (PR #2 auto-created)"
       ],
-      "summary": "Configured ANTHROPIC_API_KEY on sentinel-shared and ran full E2E test of matrix auto-update pipeline. Claude API correctly drafted GPC-099 addition to sentinel-matrix.yaml and auto-created PR #2. Both Cowork skills updated with Phase 2 operational knowledge including Unicode trigger indexer bug, workflow_dispatch patterns, and deployment procedures.",
+      "summary": "Configured ANTHROPIC_API_KEY on sentinel-shared and ran full E2E test of matrix auto-update pipeline. Claude API correctly drafted GPC-099 addition to sentinel-matrix.yaml and auto-created PR #2. Both Cowork skills updated with Phase 2 operational knowledge.",
       "artifacts": [
         "sentinel-shared PR #2 (auto-created, closed after verification)",
         "sentinel-ops SKILL.md (396 lines, Phase 2 knowledge added)",
@@ -201,7 +201,38 @@
         "Migrate ANTHROPIC_API_KEY to org-level secret",
         "Live ruling merge E2E (real ruling PR on tzhOS)"
       ]
+    },
+    {
+      "id": 20,
+      "date": "2026-03-29",
+      "node": "NODE-M",
+      "title": "Security hardening: Fine-grained PAT deployment + E2E token verification",
+      "work_packages": [
+        "Fine-grained PAT (CASCADE_TOKEN) deployed to sentinel-shared and tzhOS",
+        "Org-level ANTHROPIC_API_KEY configured (all-repo access)",
+        "E2E token verification: dashboard.yml SUCCESS (run #23710669945)",
+        "E2E token verification: matrix-updater.yml SUCCESS (run #23710671629, PR #4 auto-created)",
+        "Cleanup: closed test PRs (#2, #4), deleted test branches, repo left clean"
+      ],
+      "summary": "Migrated from classic PAT to fine-grained PAT with minimal permissions (Actions RW, Contents R, Issues RW, PRs RW). Deployed new CASCADE_TOKEN to both hub repos. Migrated ANTHROPIC_API_KEY to org-level secret for automatic propagation to all 16 downstream repos. Full E2E verification confirmed both tokens work correctly across the entire pipeline. Cleaned up all test artifacts.",
+      "artifacts": [
+        "CASCADE_TOKEN: fine-grained PAT on sentinel-shared + tzhOS (updated 2026-03-29T13:55Z)",
+        "ANTHROPIC_API_KEY: org-level secret (all repositories)",
+        "E2E runs: #23710669945 (dashboard), #23710671629 (matrix-updater)"
+      ],
+      "key_decisions": [
+        "Fine-grained PAT scoped to 17 repos only (not org-wide)",
+        "Org-level ANTHROPIC_API_KEY with all-repo visibility (needed by downstream sentinel callers)",
+        "Classic PAT can now be safely revoked",
+        "CASCADE_TOKEN only on hub repos (sentinel-shared, tzhOS), not downstream"
+      ],
+      "status": "completed",
+      "next_steps": [
+        "Revoke classic PAT (user action in GitHub UI)",
+        "Live ruling merge E2E with real governance ruling on tzhOS",
+        "Phase 4 planning: monitoring, alerting escalation, auto-remediation"
+      ]
     }
   ],
-  "phase_status": "Phase 2+3 COMPLETE: Full pipeline verified end-to-end with LLM draft"
+  "phase_status": "Phase 1-3 COMPLETE + Security Hardened: Fine-grained PAT deployed, org secrets configured, full E2E verified"
 }
