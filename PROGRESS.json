@@ -172,7 +172,36 @@
         "Next: fine-grained PAT migration"
       ],
       "status": "completed"
+    },
+    {
+      "id": 19,
+      "date": "2026-03-29",
+      "node": "NODE-M",
+      "title": "Phase 3: E2E pipeline verification + skill knowledge sync",
+      "work_packages": [
+        "P1b: ANTHROPIC_API_KEY configured on sentinel-shared",
+        "P1a: Fine-grained PAT specification prepared for CASCADE_TOKEN migration",
+        "P2: sentinel-ops skill updated with Phase 2 knowledge (314->396 lines)",
+        "P2b: governance-workflow skill updated with Phase 2 knowledge (231->309 lines)",
+        "E2E: Full matrix-updater pipeline verified with LLM draft (PR #2 auto-created)"
+      ],
+      "summary": "Configured ANTHROPIC_API_KEY on sentinel-shared and ran full E2E test of matrix auto-update pipeline. Claude API correctly drafted GPC-099 addition to sentinel-matrix.yaml and auto-created PR #2. Both Cowork skills updated with Phase 2 operational knowledge including Unicode trigger indexer bug, workflow_dispatch patterns, and deployment procedures.",
+      "artifacts": [
+        "sentinel-shared PR #2 (auto-created, closed after verification)",
+        "sentinel-ops SKILL.md (396 lines, Phase 2 knowledge added)",
+        "governance-workflow SKILL.md (309 lines, Phase 2 knowledge added)"
+      ],
+      "key_decisions": [
+        "ANTHROPIC_API_KEY as repo-level secret on sentinel-shared (not org-level yet)",
+        "Fine-grained PAT spec: 17 repos, Actions RW + Contents R + Issues RW + PRs RW"
+      ],
+      "status": "completed",
+      "next_steps": [
+        "Create and deploy fine-grained PAT as CASCADE_TOKEN",
+        "Migrate ANTHROPIC_API_KEY to org-level secret",
+        "Live ruling merge E2E (real ruling PR on tzhOS)"
+      ]
     }
   ],
-  "phase_status": "Phase 2 COMPLETE: WP-5/6/7/8/9 all deployed and verified"
+  "phase_status": "Phase 2+3 COMPLETE: Full pipeline verified end-to-end with LLM draft"
 }
