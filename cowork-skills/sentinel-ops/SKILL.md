@@ -599,3 +599,46 @@ CSS:     var(--gh-primary), var(--gh-background), ...
 React:   tokens.primary, tokens.background, ...
 Native:  GHColor.primary, GHColor.background, ...
 ```
+
+## Phase 6: Feishu Notification Integration
+
+### Dual-Path Architecture
+
+**Path A (Primary)**: Direct curl from dashboard.yml
+- Step at end of collect-status job
+- Uses FEISHU_WEBHOOK_URL + FEISHU_WEBHOOK_SECRET secrets
+- Builds Feishu interactive card with jq
+- Severity-colored: P0 red, P1 orange, P2 yellow, P3 green
+- Content: health %, breakdown, trend, action button
+- Graceful: skips if secrets not configured
+
+**Path B (Secondary)**: Super-Founder Hummingbird pipeline
+- GitHub org webhook sends workflow_run events to localhost:8080
+- GitHubWebhookHandler filters: only completed + isSentinel
+- FeishuCardBuilder routes by workflow name to specific card builders
+- SentinelEscalation.parse() extracts JSON from STEP_SUMMARY markers
+- Audit logged via SwiftData
+- Requires Super-Founder running + internet exposure (ngrok/tunnel)
+
+### Feishu Card Types
+
+1. **Dashboard Report Card**: Health %, pass/fail/stale, trend, action button
+2. **AutoFix Result Card**: Fix status (success/failure), repo, run number
+3. **Generic Sentinel Card**: Fallback for other Sentinel workflow names
+
+### CASCADE_TOKEN Push Limitation
+
+CASCADE_TOKEN (PAT for tongzhenghui) does NOT have push access to downstream repos.
+- Symptom: git push returns 403 in sentinel-autofix.yml Apply fixes step
+- Workaround: Use MCP push_files (GitHub App token has write access)
+- Fix: Update PAT scope to include contents:write for all 16 repos
+- Or: Create a fine-grained token scoped to huanlongAI org with repo write access
+
+### Secrets Required in sentinel-shared
+
+| Secret | Purpose | Status |
+|--------|---------|--------|
+| CASCADE_TOKEN | Cross-repo operations | Exists (needs scope update) |
+| ANTHROPIC_API_KEY | Claude API for LLM review + auto-fix | Exists |
+| FEISHU_WEBHOOK_URL | Feishu Custom Bot webhook endpoint | NOT YET ADDED |
+| FEISHU_WEBHOOK_SECRET | Feishu webhook signature (optional) | NOT YET ADDED |
