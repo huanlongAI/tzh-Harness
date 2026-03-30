@@ -269,14 +269,17 @@
       "id": 22,
       "date": "2026-03-30",
       "node": "NODE-M",
-      "title": "Phase 4-5: Monitoring, auto-remediation, health dashboard",
+      "title": "Phase 4-6: Monitoring, auto-remediation, dashboard, Feishu integration",
       "work_packages": [
         "WP-4A-1: escalate.sh v2 -- severity grading (P0-P3) + structured JSON output (commit a0ed69f)",
         "WP-4B-2: dashboard.yml v1 -- trend detection + stale repo nudge (commit c1c3d45)",
         "WP-4B-1: caller-sync.yml -- weekly caller workflow drift detection + auto-PR (commit c8eed83)",
         "WP-4B+-1: auto-fix.sh -- LLM-driven remediation for D-2/D-6 violations (commit 643aaba)",
         "WP-4B+-2: sentinel-autofix.yml -- auto-fix workflow with type:string inputs (commit 5724547)",
-        "WP-5-1: dashboard.yml v2 -- per-check breakdown + auto-fix trigger + Feishu escalation markers (commit ec103cd)"
+        "WP-5-1: dashboard.yml v2 -- per-check breakdown + auto-fix trigger + Feishu escalation markers (commit ec103cd)",
+        "WP-6-1: dashboard.yml v2 Feishu direct notification step (commit ee52276)",
+        "WP-6-2: super-founder feat/phase6-sentinel-feishu branch — workflow_run + FeishuCardBuilder (PR #1)",
+        "WP-AC-1: tzh-Harness D-2 auto-fix PR #1 merged via MCP (R-xxx -> R-001)"
       ],
       "summary": "Delivered Phase 4 monitoring escalation, Phase 4B+ LLM auto-remediation, and Phase 5 health dashboard v2. auto-fix.sh uses Claude API to generate sed-based fix commands for D-2 (forbidden terms) and D-6 (hardcoded colors), with security filter (only sed -i commands extracted). dashboard v2 adds per-check granularity (D-1..D-7 from job step failures), automatic trigger of sentinel-autofix for D-2/D-6 violations via matrix strategy, and SENTINEL_ESCALATION_BEGIN/END JSON for Super-Founder FeishuCardBuilder parsing. E2E verified: dashboard detected tzh-Harness D-2 violation, auto-triggered autofix, Claude API generated 5 sed fix commands. Key discovery: GitHub trigger indexer silently fails on type:choice/type:boolean inputs.",
       "artifacts": [
@@ -285,7 +288,12 @@
         "sentinel-shared/.github/workflows/sentinel-autofix.yml (5724547)",
         "sentinel-shared/.github/workflows/dashboard.yml v2 (ec103cd)",
         "sentinel-shared/.github/workflows/caller-sync.yml (c8eed83)",
-        "sentinel-shared issue #6: first dashboard v2 report [P1]"
+        "sentinel-shared issue #6: first dashboard v2 report [P1]",
+        "sentinel-shared/.github/workflows/dashboard.yml v2 + Feishu (ee52276)",
+        "sentinel-shared/.github/workflows/sentinel-autofix.yml v2 (9351c49)",
+        "super-founder PR #1: feat/phase6-sentinel-feishu (3 Swift files)",
+        "tzh-Harness PR #1: D-2 auto-fix (squash merged 6b73e14)",
+        "sentinel-shared issues #6, #7: dashboard reports [P1]"
       ],
       "architecture": {
         "severity_model": "P0 (all fail OR governance LLM FAIL) -> P1 (multi fail OR LLM FAIL) -> P2 (single non-critical) -> P3 (all pass)",
@@ -307,6 +315,16 @@
           "auto_fix_trigger": "D-2/D-6 failures -> matrix job dispatches sentinel-autofix.yml",
           "feishu_markers": "SENTINEL_ESCALATION_BEGIN/END JSON in STEP_SUMMARY",
           "severity": "P0 (>=4 fail) P1 (>=1 fail) P2 (>=4 stale) P3 (clean)"
+        },
+        "feishu_notification": {
+          "primary": "dashboard.yml curl -> FEISHU_WEBHOOK_URL (direct, works without Super-Founder)",
+          "secondary": "GitHub workflow_run webhook -> Hummingbird -> FeishuCardBuilder -> Feishu",
+          "card_types": [
+            "Dashboard report (severity-colored)",
+            "AutoFix result",
+            "Generic Sentinel"
+          ],
+          "escalation_markers": "SENTINEL_ESCALATION_BEGIN/END JSON in STEP_SUMMARY"
         }
       },
       "key_decisions": [
@@ -319,15 +337,21 @@
         "type:choice/type:boolean causes GitHub trigger indexer 422 -- use type:string for all workflow_dispatch inputs",
         "Auto-fix default dry_run=true (safety: never auto-push without review)",
         "Dashboard auto-triggers autofix with dry_run=true (generates patch for review)",
-        "LLM fix security: only grep ^sed -i lines extracted from Claude output"
+        "LLM fix security: only grep ^sed -i lines extracted from Claude output",
+        "Dual-path Feishu notification: direct curl (primary) + Super-Founder webhook (secondary)",
+        "CASCADE_TOKEN lacks push to downstream repos — use MCP push_files as workaround",
+        "SentinelEscalation.parse() extracts JSON between HTML comment markers",
+        "Only process workflow_run events with action=completed AND isSentinel=true"
       ],
       "status": "completed",
       "next_steps": [
-        "Revoke classic PAT (user action in GitHub Settings)",
-        "Run sentinel-autofix with dry_run=false on tzh-Harness D-2 to create actual PR",
-        "Phase 6: Super-Founder FeishuCardBuilder integration for dashboard v2 escalation JSON"
+        "Add FEISHU_WEBHOOK_URL + FEISHU_WEBHOOK_SECRET secrets to sentinel-shared",
+        "Update CASCADE_TOKEN with contents:write for all 16 downstream repos",
+        "Revoke classic PAT (GitHub Settings, carried from Session 20)",
+        "Merge super-founder PR #1 after Swift compilation test",
+        "Phase 7: FeishuCommandRouter → interactive commands from Feishu to Sentinel"
       ]
     }
   ],
-  "phase_status": "Phase 1-5 COMPLETE"
+  "phase_status": "Phase 1-6 COMPLETE"
 }
