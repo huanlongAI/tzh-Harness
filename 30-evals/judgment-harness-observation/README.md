@@ -81,6 +81,14 @@
 30-evals/judgment-harness-observation/logs/observation-log.jsonl
 ```
 
+Case-specific templates or signed-evidence pointers may live under:
+
+```text
+30-evals/judgment-harness-observation/cases/
+```
+
+Files under `cases/` are evidence-collection aids only. They must not import unsigned cross-conversation drafts, AI outputs, process files, instant messages, secrets, or private customer data into the eval asset.
+
 每行一条 JSON：
 
 ```json
