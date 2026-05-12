@@ -1,12 +1,13 @@
 # JH-002 Signed Evidence Pack Template
 
-> Status: TEMPLATE
+> Status: PARTIAL-EVIDENCE-PACK - boundary source accepted; baseline unsigned
 > Case: JH-002 / 美人计智能体
 > Upstream method source: `tzhOS/ai/JUDGMENT-HARNESS.md`
 > Observation asset: `tzh-Harness/30-evals/judgment-harness-observation/`
 > Tracker: https://github.com/huanlongAI/tzh-Harness/issues/15
+> Accepted boundary source: https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4428892028
 
-This template defines the minimum durable evidence needed before JH-002 can be considered for `PASS`.
+This evidence pack tracks the minimum durable evidence needed before JH-002 can be considered for `PASS`.
 
 It is not a product baseline. Do not fill business, product, customer, strategy, pricing, provider, credential, or private cross-conversation content here unless the content already exists in a signed durable source and is linked as evidence.
 
@@ -26,10 +27,10 @@ It is not a product baseline. Do not fill business, product, customer, strategy,
 | Case ID | yes | JH-002 |
 | Case name | yes | 美人计智能体 |
 | Method version | yes | `v0.1.3` |
-| Evidence pack version | yes | `TBD - requires signed source` |
-| Founder sign-off source | yes | `TBD - requires signed source` |
+| Evidence pack version | yes | `boundary-v1-20260512` |
+| Founder sign-off source | yes | `TBD - requires signed baseline / human sign-off source` |
 | Signed baseline source | yes | `TBD - requires signed source` |
-| Boundary source | yes | `TBD - requires signed source` |
+| Boundary source | yes | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4428892028 |
 | Grill trace source | yes | `TBD - requires signed source` |
 | Evidence source | yes | `TBD - requires signed source` |
 | Observation log source | yes | `30-evals/judgment-harness-observation/logs/observation-log.jsonl` |
@@ -40,25 +41,25 @@ Boundary is valid only when each material input is classified as durable source,
 
 | Field | Value | Source / status |
 |---|---|---|
-| Task in one sentence | `TBD - requires signed source` | `TBD` |
-| Current background | `TBD - requires signed source` | `TBD` |
-| Target user / operator | `TBD - requires signed source` | `TBD` |
-| Initial goal | `TBD - requires signed source` | `TBD` |
-| Explicit non-goals | `TBD - requires signed source` | `TBD` |
-| Known constraints | `TBD - requires signed source` | `TBD` |
-| Available materials | `TBD - requires signed source` | `TBD` |
-| Forbidden materials / zones | `Unsigned cross-conversation drafts, AI outputs, process files, instant messages, secrets, private customer data` | This template |
-| Open judgments | `TBD - requires signed source` | `TBD` |
-| Expected output | `TBD - requires signed source` | `TBD` |
+| Task in one sentence | JH-002 / 美人计智能体 Judgment Harness 实战观察。 | Signed boundary source |
+| Current background | Boundary source was submitted in `tzh-Harness#15` and accepted only for boundary intake. | GitHub issue comment created at 2026-05-12T08:56:17Z |
+| Target user / operator | `TBD - requires signed source` | Not specified by boundary source |
+| Initial goal | 只观察和验证 Judgment Harness 方法是否能防止目标、事实、判断责任和执行输入漂移。 | Signed boundary source |
+| Explicit non-goals | 不在这里确认完整产品方案、商业策略、用户数据、定价、供应商、真实 provider 接入或新代码实现。 | Signed boundary source |
+| Known constraints | `hl-scene-app` green CI and PR evidence are engineering evidence only; PR #40 dahuizi/Codex Runner rejected/inconclusive output is not accepted sign-off; current lane does not use NODE-R; NODE-M may not expand this boundary into a signed baseline. | Signed boundary source |
+| Available materials | `tzh-Harness#15`; `tzh-Harness` observation files; GitHub PR/issue/commit/CI evidence; future durable sources explicitly signed or linked by Founder. | Signed boundary source |
+| Forbidden materials / zones | 未签署的跨对话草稿、AI 输出、即时聊天、过程文件、密钥、token、私有客户资料。 | Signed boundary source |
+| Open judgments | Signed grill, signed baseline, evidence lite/full, and human sign-off remain missing; `hl-scene-app#21` and `tech-cofounder-bot#2` remain external blockers. | Observation log and readiness ledger |
+| Expected output | NODE-M may update this Boundary Card from the signed source, but must not extend it into signed baseline. | Signed boundary source |
 | Review window | 24h / 72h / 7d | tzhOS Judgment Harness method |
 
 Boundary acceptance:
 
-- [ ] Truth sources are listed.
-- [ ] Draft/process/chat/AI-output materials are explicitly separated from truth sources.
-- [ ] Forbidden materials are named.
-- [ ] Questions that cannot be guessed are listed.
-- [ ] Founder or authorized human has confirmed the boundary.
+- [x] Truth sources are listed.
+- [x] Draft/process/chat/AI-output materials are explicitly separated from truth sources.
+- [x] Forbidden materials are named.
+- [x] Questions that cannot be guessed are listed.
+- [x] Founder or authorized human has confirmed the boundary.
 
 ## 2. Grill Decision Tree
 

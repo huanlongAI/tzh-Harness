@@ -1,7 +1,7 @@
 # JH-002 PASS Readiness Ledger - 2026-05-12
 
 > Case: JH-002 / 美人计智能体
-> Status: NOT_READY_FOR_PASS
+> Status: NOT_READY_FOR_PASS - boundary accepted, baseline unsigned
 > Snapshot time: 2026-05-12T15:57:48+08:00
 > Tracker: https://github.com/huanlongAI/tzh-Harness/issues/15
 
@@ -13,10 +13,10 @@ unsigned cross-conversation content.
 
 `WARN` for the PR #32 engineering-anchor D7 observation.
 
-JH-002 remains unavailable for `PASS` because the signed Judgment Harness
-inputs are still missing. Engineering evidence is stable enough to stop
-waiting on the PR #32 D7 timer, but it does not replace signed baseline
-evidence.
+JH-002 remains unavailable for `PASS` because only the boundary source has
+been accepted. Signed grill, baseline, evidence, and human sign-off remain
+missing. Engineering evidence is stable enough to stop waiting on the PR #32
+D7 timer, but it does not replace signed baseline evidence.
 
 ## Completed Engineering Observations
 
@@ -28,15 +28,16 @@ evidence.
 | Case-level D7 evidence gap | `40046e0` | observed | Case-level D7 remains insufficient evidence due missing signed sources. |
 | PR #32 D7 checklist | `7dce928` | complete | Checklist only; not a baseline. |
 | PR #32 engineering-anchor D7 | `e424879` | observed WARN | Engineering state clean/CI-green; signed baseline absent. |
+| Boundary source intake | Issue #15 comment `4428892028` | accepted for boundary only | Does not sign grill, baseline, evidence, or human sign-off. |
 
 ## PASS Gate State
 
 | Gate | State | Durable evidence | Next action |
 |---|---|---|---|
-| Boundary card signed | missing | Issue #15 has no signed boundary source | Founder/operator posts or links signed boundary source. |
+| Boundary card signed | accepted | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4428892028 | Keep as boundary only; do not expand into baseline. |
 | Grill decision tree signed | missing | Issue #15 has no signed grill source | Founder/operator posts or links signed grill source. |
 | Signed baseline | missing | Issue #15 has no signed baseline source | Founder/operator signs a durable baseline artifact/comment/commit. |
-| Evidence lite/full | missing | Template exists, but fields remain `TBD` | Fill only after signed sources exist. |
+| Evidence lite/full | partial | Boundary section can cite the accepted boundary source; other fields remain `TBD` | Fill remaining sections only after signed sources exist. |
 | Human sign-off | missing | No sign-off comment/commit observed | Human signs the specific baseline scope. |
 | 24h / 72h / 7d observations | partial | Engineering observations exist; signed-baseline observations cannot complete without baseline | Re-observe baseline only after signed sources exist. |
 | No unsigned source promotion | holding | Observations explicitly preserve this boundary | Continue excluding drafts, AI output, process notes, and chats. |
