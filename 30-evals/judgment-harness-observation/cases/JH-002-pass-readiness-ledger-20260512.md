@@ -1,8 +1,8 @@
 # JH-002 PASS Readiness Ledger - 2026-05-12
 
 > Case: JH-002 / 美人计智能体
-> Status: NOT_READY_FOR_PASS - boundary accepted, baseline unsigned
-> Snapshot time: 2026-05-13T11:31:50+08:00
+> Status: NOT_READY_FOR_PASS - boundary and grill accepted, baseline unsigned
+> Snapshot time: 2026-05-13T15:10:25+08:00
 > Tracker: https://github.com/huanlongAI/tzh-Harness/issues/15
 
 This ledger records the state after the PR #32 engineering-anchor D7
@@ -13,10 +13,10 @@ unsigned cross-conversation content.
 
 `WARN` for the PR #32 engineering-anchor D7 observation.
 
-JH-002 remains unavailable for `PASS` because only the boundary source has
-been accepted. Signed grill, baseline, evidence, and human sign-off remain
-missing. Engineering evidence is stable enough to stop waiting on the PR #32
-D7 timer, but it does not replace signed baseline evidence.
+JH-002 remains unavailable for `PASS` because boundary and grill are accepted,
+but signed baseline, evidence, and human sign-off remain missing. Engineering
+evidence is stable enough to stop waiting on the PR #32 D7 timer, but it does
+not replace signed baseline evidence.
 
 ## Completed Engineering Observations
 
@@ -31,13 +31,14 @@ D7 timer, but it does not replace signed baseline evidence.
 | Boundary source intake | Issue #15 comment `4428892028` | accepted for boundary only | Does not sign grill, baseline, evidence, or human sign-off. |
 | Next signed source request | Issue #15 comment `4436877208` | requested only | Request asks for signed grill first, or signed baseline if a durable baseline already exists; not a signed source. |
 | Grill intake worksheet | Issue #15 comment `4436906925` / `JH-002-grill-intake-worksheet-20260513.md` | unsigned draft | Helps Founder sign grill rows; does not fill the grill gate until signed. |
+| Signed grill bundle | Issue #15 comment `4438289822` | accepted for G-001 to G-003 | Signs grill-first intake, observation-only baseline lane, and no product-code work before signed baseline. |
 
 ## PASS Gate State
 
 | Gate | State | Durable evidence | Next action |
 |---|---|---|---|
 | Boundary card signed | accepted | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4428892028 | Keep as boundary only; do not expand into baseline. |
-| Grill decision tree signed | missing | Issue #15 has no signed grill source; request posted at https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4436877208 and unsigned worksheet posted at https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4436906925 | Founder/operator posts or links signed grill source. |
+| Grill decision tree signed | accepted | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438289822 | Accepted rows G-001 to G-003 only; G-004 to G-006 remain unsigned draft unless later signed. |
 | Signed baseline | missing | Issue #15 has no signed baseline source; request posted at https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4436877208 | Founder/operator signs a durable baseline artifact/comment/commit. |
 | Evidence lite/full | partial | Boundary section can cite the accepted boundary source; other fields remain `TBD` | Fill remaining sections only after signed sources exist. |
 | Human sign-off | missing | No sign-off comment/commit observed | Human signs the specific baseline scope. |
@@ -53,7 +54,7 @@ D7 timer, but it does not replace signed baseline evidence.
 | `tech-cofounder-bot#2` NODE-C Flutter runtime | open | Dahuizi cannot freshly run Flutter analyze/test on NODE-C | Install/expose Flutter runtime and record fresh dahuizi verification. |
 | PR #40 dahuizi audit lane | rejected/inconclusive | Two Codex Runner attempts failed required audit schema | Do not count as accepted sign-off; use a different executor or add schema precheck before any retry. |
 
-## Pending Intake Request
+## Historical Intake Request
 
 On 2026-05-13, NODE-M posted a next-source request in Issue #15:
 
@@ -75,6 +76,30 @@ The worksheet proposes discrete grill rows G-001 to G-006. It is only a draft
 aid for Founder/operator signing. It must not be treated as a signed grill
 trace or baseline until a human signs selected rows or links an equivalent
 durable source.
+
+## Accepted Grill Source
+
+On 2026-05-13, Founder signed grill rows G-001 to G-003:
+
+- https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438289822
+
+Accepted choices:
+
+- G-001 = A: sign grill first, do not jump to baseline.
+- G-002 = A: current lane only allows observation-only Judgment Harness
+  baseline, not product baseline.
+- G-003 = A: no downstream `hl-scene-app` product-code work before signed
+  baseline; governance/evidence docs may continue.
+
+The comment body timestamp field used a placeholder, so audit timing uses the
+durable GitHub comment timestamp: 2026-05-13T07:10:25Z /
+2026-05-13T15:10:25+08:00.
+
+## Current Next Source
+
+The next source should be a signed observation-only baseline. It must not become
+a product baseline, must not authorize `hl-scene-app` product-code work, and
+must cite the accepted boundary and grill sources above.
 
 ## Intake Format
 
