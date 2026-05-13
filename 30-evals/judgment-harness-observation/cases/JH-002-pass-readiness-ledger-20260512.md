@@ -2,7 +2,7 @@
 
 > Case: JH-002 / 美人计智能体
 > Status: NOT_READY_FOR_PASS - boundary and grill accepted, baseline unsigned
-> Snapshot time: 2026-05-13T15:10:25+08:00
+> Snapshot time: 2026-05-13T15:49:55+08:00
 > Tracker: https://github.com/huanlongAI/tzh-Harness/issues/15
 
 This ledger records the state after the PR #32 engineering-anchor D7
@@ -32,6 +32,7 @@ not replace signed baseline evidence.
 | Next signed source request | Issue #15 comment `4436877208` | requested only | Request asks for signed grill first, or signed baseline if a durable baseline already exists; not a signed source. |
 | Grill intake worksheet | Issue #15 comment `4436906925` / `JH-002-grill-intake-worksheet-20260513.md` | unsigned draft | Helps Founder sign grill rows; does not fill the grill gate until signed. |
 | Signed grill bundle | Issue #15 comment `4438289822` | accepted for G-001 to G-003 | Signs grill-first intake, observation-only baseline lane, and no product-code work before signed baseline. |
+| Observation-only baseline worksheet | Issue #15 comment `4438621264` / `JH-002-observation-baseline-intake-worksheet-20260513.md` | unsigned draft | Helps Founder sign observation-only baseline; does not fill the baseline gate until signed. |
 
 ## PASS Gate State
 
@@ -39,7 +40,7 @@ not replace signed baseline evidence.
 |---|---|---|---|
 | Boundary card signed | accepted | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4428892028 | Keep as boundary only; do not expand into baseline. |
 | Grill decision tree signed | accepted | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438289822 | Accepted rows G-001 to G-003 only; G-004 to G-006 remain unsigned draft unless later signed. |
-| Signed baseline | missing | Issue #15 has no signed baseline source; request posted at https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4436877208 | Founder/operator signs a durable baseline artifact/comment/commit. |
+| Signed baseline | missing | Issue #15 has no signed baseline source; unsigned worksheet posted at https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438621264 | Founder/operator signs a durable observation-only baseline artifact/comment/commit. |
 | Evidence lite/full | partial | Boundary section can cite the accepted boundary source; other fields remain `TBD` | Fill remaining sections only after signed sources exist. |
 | Human sign-off | missing | No sign-off comment/commit observed | Human signs the specific baseline scope. |
 | 24h / 72h / 7d observations | partial | Engineering observations exist; signed-baseline observations cannot complete without baseline | Re-observe baseline only after signed sources exist. |
@@ -100,6 +101,18 @@ durable GitHub comment timestamp: 2026-05-13T07:10:25Z /
 The next source should be a signed observation-only baseline. It must not become
 a product baseline, must not authorize `hl-scene-app` product-code work, and
 must cite the accepted boundary and grill sources above.
+
+## Unsigned Observation Baseline Worksheet
+
+On 2026-05-13, NODE-M added an unsigned observation-only baseline worksheet:
+
+- `30-evals/judgment-harness-observation/cases/JH-002-observation-baseline-intake-worksheet-20260513.md`
+- https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438621264
+
+The worksheet proposes a candidate `observation-baseline-v1-20260513` using
+only accepted boundary and grill sources. It is draft scaffolding only. It must
+not be treated as signed baseline, human sign-off, PASS evidence, or product
+code authorization until a human signs a baseline source.
 
 ## Intake Format
 
