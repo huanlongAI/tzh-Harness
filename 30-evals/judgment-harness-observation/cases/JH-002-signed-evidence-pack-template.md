@@ -1,12 +1,13 @@
 # JH-002 Signed Evidence Pack Template
 
-> Status: PARTIAL-EVIDENCE-PACK - boundary and grill accepted; baseline unsigned
+> Status: PARTIAL-EVIDENCE-PACK - boundary, grill, and baseline accepted; evidence/sign-off missing
 > Case: JH-002 / 美人计智能体
 > Upstream method source: `tzhOS/ai/JUDGMENT-HARNESS.md`
 > Observation asset: `tzh-Harness/30-evals/judgment-harness-observation/`
 > Tracker: https://github.com/huanlongAI/tzh-Harness/issues/15
 > Accepted boundary source: https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4428892028
 > Accepted grill source: https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438289822
+> Accepted baseline source: https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438727029
 
 This evidence pack tracks the minimum durable evidence needed before JH-002 can be considered for `PASS`.
 
@@ -28,9 +29,9 @@ It is not a product baseline. Do not fill business, product, customer, strategy,
 | Case ID | yes | JH-002 |
 | Case name | yes | 美人计智能体 |
 | Method version | yes | `v0.1.3` |
-| Evidence pack version | yes | `grill-v1-20260513` |
-| Founder sign-off source | yes | `TBD - requires signed baseline / human sign-off source` |
-| Signed baseline source | yes | `TBD - requires signed source` |
+| Evidence pack version | yes | `baseline-v1-20260513` |
+| Founder sign-off source | yes | `TBD - requires human sign-off source` |
+| Signed baseline source | yes | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438727029 |
 | Boundary source | yes | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4428892028 |
 | Grill trace source | yes | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438289822 |
 | Evidence source | yes | `TBD - requires signed source` |
@@ -50,7 +51,7 @@ Boundary is valid only when each material input is classified as durable source,
 | Known constraints | `hl-scene-app` green CI and PR evidence are engineering evidence only; PR #40 dahuizi/Codex Runner rejected/inconclusive output is not accepted sign-off; current lane does not use NODE-R; NODE-M may not expand this boundary into a signed baseline. | Signed boundary source |
 | Available materials | `tzh-Harness#15`; `tzh-Harness` observation files; GitHub PR/issue/commit/CI evidence; future durable sources explicitly signed or linked by Founder. | Signed boundary source |
 | Forbidden materials / zones | 未签署的跨对话草稿、AI 输出、即时聊天、过程文件、密钥、token、私有客户资料。 | Signed boundary source |
-| Open judgments | Signed baseline, evidence lite/full, and human sign-off remain missing; `hl-scene-app#21` and `tech-cofounder-bot#2` remain external blockers. | Observation log and readiness ledger |
+| Open judgments | Evidence lite/full and human sign-off remain missing; `hl-scene-app#21` and `tech-cofounder-bot#2` remain external blockers. | Observation log and readiness ledger |
 | Expected output | NODE-M may update this Boundary Card from the signed source, but must not extend it into signed baseline. | Signed boundary source |
 | Review window | 24h / 72h / 7d | tzhOS Judgment Harness method |
 
@@ -91,30 +92,34 @@ Grill acceptance:
 
 ## 3. Signed Baseline
 
-This section is not a baseline until a human sign-off source is linked.
+Accepted baseline source: https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438727029
+
+The comment body timestamp field used a placeholder, so audit timing uses the
+durable GitHub comment timestamp: 2026-05-13T08:03:31Z /
+2026-05-13T16:03:31+08:00.
 
 | Field | Value | Source / status |
 |---|---|---|
-| Baseline version | `TBD - requires signed source` | `TBD` |
-| Signer | `TBD - requires signed source` | `TBD` |
-| Sign-off timestamp | `TBD - requires signed source` | `TBD` |
-| Goal | `TBD - requires signed source` | `TBD` |
-| Non-goals | `TBD - requires signed source` | `TBD` |
-| Audience / users | `TBD - requires signed source` | `TBD` |
-| Constraints | `TBD - requires signed source` | `TBD` |
-| Key judgments | `TBD - requires signed source` | `TBD` |
-| Dependencies / upstream truth sources | `TBD - requires signed source` | `TBD` |
-| Downstream deliverables | `TBD - requires signed source` | `TBD` |
-| Acceptance criteria | `TBD - requires signed source` | `TBD` |
-| Forbidden zones | `TBD - requires signed source` | `TBD` |
+| Baseline version | `observation-baseline-v1-20260513` | Signed baseline source |
+| Signer | Founder / tongzhenghui | Signed baseline source |
+| Sign-off timestamp | 2026-05-13T08:03:31Z / 2026-05-13T16:03:31+08:00 | GitHub comment timestamp |
+| Goal | Observe and verify whether Judgment Harness prevents goal, fact, judgment-responsibility, and execution-input drift in JH-002. | Signed baseline source |
+| Non-goals | Do not confirm a full product plan, business strategy, user data, pricing, provider, real provider integration, or new code implementation. | Signed baseline source |
+| Audience / users | NODE-M / tzh-Harness observation lane only. | Signed baseline source |
+| Constraints | Use durable signed sources only; exclude unsigned cross-conversation drafts, AI outputs, chats, process files, secrets, tokens, and private customer data. | Signed baseline source |
+| Key judgments | G-001=A, G-002=A, G-003=A from the accepted grill source. | Signed baseline source |
+| Dependencies / upstream truth sources | Accepted boundary source, accepted grill source, observation log, PASS readiness ledger, and GitHub PR/issue/commit/CI evidence. | Signed baseline source |
+| Downstream deliverables | Governance/evidence document updates only; no product-code work. | Signed baseline source |
+| Acceptance criteria | Baseline remains observation-only; facts/assumptions/judgments/preferences stay separated; no unsigned source promotion; no product-code PR is opened from this baseline alone. | Signed baseline source |
+| Forbidden zones | Product baseline, customer/private data, secrets/token material, provider credentials, real provider binding, new code implementation, PR #40 audit rehabilitation without a new signed source. | Signed baseline source |
 
 Baseline acceptance:
 
-- [ ] The baseline has an explicit human sign-off.
-- [ ] The baseline distinguishes goals from non-goals.
-- [ ] The baseline is sufficient for downstream review or execution without re-asking the core direction.
-- [ ] The baseline does not contain or depend on unsigned source promotion.
-- [ ] Any engineering task derived from the baseline cites the signed baseline source.
+- [x] The baseline has an explicit human sign-off for observation-only baseline scope.
+- [x] The baseline distinguishes goals from non-goals.
+- [x] The baseline is sufficient for downstream observation/review without re-asking the core direction.
+- [x] The baseline does not contain or depend on unsigned source promotion.
+- [x] Any engineering task derived from the baseline cites the signed baseline source.
 
 ## 4. Evidence Lite / Full
 
@@ -190,7 +195,7 @@ JH-002 may only be considered for `PASS` when all items are complete:
 
 - [x] Boundary card exists and is signed or linked to a signed source.
 - [x] Grill decision tree exists and is signed or linked to a signed source.
-- [ ] Signed baseline version exists.
+- [x] Signed baseline version exists.
 - [ ] Evidence lite/full records separate facts, assumptions, judgments, and preferences.
 - [ ] 24h / 72h / 7d observations are complete.
 - [ ] No unsigned source promotion occurred.

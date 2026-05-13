@@ -1,8 +1,8 @@
 # JH-002 PASS Readiness Ledger - 2026-05-12
 
 > Case: JH-002 / 美人计智能体
-> Status: NOT_READY_FOR_PASS - boundary and grill accepted, baseline unsigned
-> Snapshot time: 2026-05-13T15:49:55+08:00
+> Status: NOT_READY_FOR_PASS - boundary, grill, and baseline accepted; evidence/sign-off missing
+> Snapshot time: 2026-05-13T16:03:31+08:00
 > Tracker: https://github.com/huanlongAI/tzh-Harness/issues/15
 
 This ledger records the state after the PR #32 engineering-anchor D7
@@ -13,10 +13,10 @@ unsigned cross-conversation content.
 
 `WARN` for the PR #32 engineering-anchor D7 observation.
 
-JH-002 remains unavailable for `PASS` because boundary and grill are accepted,
-but signed baseline, evidence, and human sign-off remain missing. Engineering
-evidence is stable enough to stop waiting on the PR #32 D7 timer, but it does
-not replace signed baseline evidence.
+JH-002 remains unavailable for `PASS` because boundary, grill, and the
+observation-only baseline are accepted, but evidence lite/full and final human
+sign-off remain missing. Engineering evidence is stable enough to stop waiting
+on the PR #32 D7 timer, but it does not replace signed evidence or sign-off.
 
 ## Completed Engineering Observations
 
@@ -33,6 +33,7 @@ not replace signed baseline evidence.
 | Grill intake worksheet | Issue #15 comment `4436906925` / `JH-002-grill-intake-worksheet-20260513.md` | unsigned draft | Helps Founder sign grill rows; does not fill the grill gate until signed. |
 | Signed grill bundle | Issue #15 comment `4438289822` | accepted for G-001 to G-003 | Signs grill-first intake, observation-only baseline lane, and no product-code work before signed baseline. |
 | Observation-only baseline worksheet | Issue #15 comment `4438621264` / `JH-002-observation-baseline-intake-worksheet-20260513.md` | unsigned draft | Helps Founder sign observation-only baseline; does not fill the baseline gate until signed. |
+| Signed observation-only baseline | Issue #15 comment `4438727029` | accepted for baseline only | Signs `observation-baseline-v1-20260513`; does not authorize product-code work or count as evidence/full sign-off. |
 
 ## PASS Gate State
 
@@ -40,10 +41,10 @@ not replace signed baseline evidence.
 |---|---|---|---|
 | Boundary card signed | accepted | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4428892028 | Keep as boundary only; do not expand into baseline. |
 | Grill decision tree signed | accepted | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438289822 | Accepted rows G-001 to G-003 only; G-004 to G-006 remain unsigned draft unless later signed. |
-| Signed baseline | missing | Issue #15 has no signed baseline source; unsigned worksheet posted at https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438621264 | Founder/operator signs a durable observation-only baseline artifact/comment/commit. |
-| Evidence lite/full | partial | Boundary section can cite the accepted boundary source; other fields remain `TBD` | Fill remaining sections only after signed sources exist. |
-| Human sign-off | missing | No sign-off comment/commit observed | Human signs the specific baseline scope. |
-| 24h / 72h / 7d observations | partial | Engineering observations exist; signed-baseline observations cannot complete without baseline | Re-observe baseline only after signed sources exist. |
+| Signed baseline | accepted | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438727029 | Keep as observation-only baseline; do not treat as product baseline. |
+| Evidence lite/full | partial | Boundary, grill, and baseline sections can cite accepted signed sources; facts/assumptions/judgments/preferences evidence remains `TBD` | Collect signed evidence lite/full source without importing unsigned drafts. |
+| Human sign-off | missing | No final PASS/sign-off comment/commit observed | Human signs the specific review/sign-off scope after evidence is complete. |
+| 24h / 72h / 7d observations | partial | Engineering observations exist; signed-baseline intake is now recorded | Continue observations only from durable signed/evidence sources. |
 | No unsigned source promotion | holding | Observations explicitly preserve this boundary | Continue excluding drafts, AI output, process notes, and chats. |
 | Downstream dispatch after sign-off | not satisfied | Engineering cleanup happened before signed product baseline exists | Do not open new product-code PRs until a signed baseline creates a concrete task. |
 
@@ -96,12 +97,6 @@ The comment body timestamp field used a placeholder, so audit timing uses the
 durable GitHub comment timestamp: 2026-05-13T07:10:25Z /
 2026-05-13T15:10:25+08:00.
 
-## Current Next Source
-
-The next source should be a signed observation-only baseline. It must not become
-a product baseline, must not authorize `hl-scene-app` product-code work, and
-must cite the accepted boundary and grill sources above.
-
 ## Unsigned Observation Baseline Worksheet
 
 On 2026-05-13, NODE-M added an unsigned observation-only baseline worksheet:
@@ -113,6 +108,31 @@ The worksheet proposes a candidate `observation-baseline-v1-20260513` using
 only accepted boundary and grill sources. It is draft scaffolding only. It must
 not be treated as signed baseline, human sign-off, PASS evidence, or product
 code authorization until a human signs a baseline source.
+
+## Accepted Observation-Only Baseline Source
+
+On 2026-05-13, Founder signed the observation-only baseline:
+
+- https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438727029
+
+Accepted baseline fields:
+
+- Baseline version: `observation-baseline-v1-20260513`.
+- Scope: NODE-M / tzh-Harness observation lane only.
+- Downstream deliverables: governance/evidence document updates only; no
+  product-code work.
+- Acceptance criteria: observation-only; no unsigned source promotion; no
+  product-code PR opened from this baseline alone.
+
+The comment body timestamp field used a placeholder, so audit timing uses the
+durable GitHub comment timestamp: 2026-05-13T08:03:31Z /
+2026-05-13T16:03:31+08:00.
+
+## Current Next Source
+
+The next source should be signed evidence lite/full. It must separate facts,
+assumptions, judgments, and preferences, must not import unsigned drafts, and
+must not rehabilitate PR #40 audit output without a new signed source.
 
 ## Intake Format
 
