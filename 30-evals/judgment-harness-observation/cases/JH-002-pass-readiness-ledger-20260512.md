@@ -2,7 +2,7 @@
 
 > Case: JH-002 / 美人计智能体
 > Status: NOT_READY_FOR_PASS - boundary accepted, baseline unsigned
-> Snapshot time: 2026-05-12T15:57:48+08:00
+> Snapshot time: 2026-05-13T11:24:58+08:00
 > Tracker: https://github.com/huanlongAI/tzh-Harness/issues/15
 
 This ledger records the state after the PR #32 engineering-anchor D7
@@ -29,14 +29,15 @@ D7 timer, but it does not replace signed baseline evidence.
 | PR #32 D7 checklist | `7dce928` | complete | Checklist only; not a baseline. |
 | PR #32 engineering-anchor D7 | `e424879` | observed WARN | Engineering state clean/CI-green; signed baseline absent. |
 | Boundary source intake | Issue #15 comment `4428892028` | accepted for boundary only | Does not sign grill, baseline, evidence, or human sign-off. |
+| Next signed source request | Issue #15 comment `4436877208` | requested only | Request asks for signed grill first, or signed baseline if a durable baseline already exists; not a signed source. |
 
 ## PASS Gate State
 
 | Gate | State | Durable evidence | Next action |
 |---|---|---|---|
 | Boundary card signed | accepted | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4428892028 | Keep as boundary only; do not expand into baseline. |
-| Grill decision tree signed | missing | Issue #15 has no signed grill source | Founder/operator posts or links signed grill source. |
-| Signed baseline | missing | Issue #15 has no signed baseline source | Founder/operator signs a durable baseline artifact/comment/commit. |
+| Grill decision tree signed | missing | Issue #15 has no signed grill source; request posted at https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4436877208 | Founder/operator posts or links signed grill source. |
+| Signed baseline | missing | Issue #15 has no signed baseline source; request posted at https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4436877208 | Founder/operator signs a durable baseline artifact/comment/commit. |
 | Evidence lite/full | partial | Boundary section can cite the accepted boundary source; other fields remain `TBD` | Fill remaining sections only after signed sources exist. |
 | Human sign-off | missing | No sign-off comment/commit observed | Human signs the specific baseline scope. |
 | 24h / 72h / 7d observations | partial | Engineering observations exist; signed-baseline observations cannot complete without baseline | Re-observe baseline only after signed sources exist. |
@@ -50,6 +51,17 @@ D7 timer, but it does not replace signed baseline evidence.
 | `hl-scene-app#21` credential confirmation | open | Operator-side credential scope, read-only/minimum permission, and old credential revocation remain unconfirmed | Operator confirms without exposing token material. |
 | `tech-cofounder-bot#2` NODE-C Flutter runtime | open | Dahuizi cannot freshly run Flutter analyze/test on NODE-C | Install/expose Flutter runtime and record fresh dahuizi verification. |
 | PR #40 dahuizi audit lane | rejected/inconclusive | Two Codex Runner attempts failed required audit schema | Do not count as accepted sign-off; use a different executor or add schema precheck before any retry. |
+
+## Pending Intake Request
+
+On 2026-05-13, NODE-M posted a next-source request in Issue #15:
+
+- https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4436877208
+
+The request prioritizes a signed `grill` source and allows a signed `baseline`
+only if a durable baseline already exists. The request itself is not signed
+evidence, does not fill the evidence pack, and does not authorize product-code
+work.
 
 ## Intake Format
 
