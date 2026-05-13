@@ -2,7 +2,7 @@
 
 > Case: JH-002 / 美人计智能体
 > Status: NOT_READY_FOR_PASS - boundary, grill, and baseline accepted; evidence/sign-off missing
-> Snapshot time: 2026-05-13T16:03:31+08:00
+> Snapshot time: 2026-05-13T16:23:44+08:00
 > Tracker: https://github.com/huanlongAI/tzh-Harness/issues/15
 
 This ledger records the state after the PR #32 engineering-anchor D7
@@ -34,6 +34,7 @@ on the PR #32 D7 timer, but it does not replace signed evidence or sign-off.
 | Signed grill bundle | Issue #15 comment `4438289822` | accepted for G-001 to G-003 | Signs grill-first intake, observation-only baseline lane, and no product-code work before signed baseline. |
 | Observation-only baseline worksheet | Issue #15 comment `4438621264` / `JH-002-observation-baseline-intake-worksheet-20260513.md` | unsigned draft | Helps Founder sign observation-only baseline; does not fill the baseline gate until signed. |
 | Signed observation-only baseline | Issue #15 comment `4438727029` | accepted for baseline only | Signs `observation-baseline-v1-20260513`; does not authorize product-code work or count as evidence/full sign-off. |
+| Evidence lite worksheet | Issue #15 comment `4438919918` / `JH-002-evidence-lite-intake-worksheet-20260513.md` | unsigned draft | Helps Founder sign facts, assumptions, judgments, and preferences; does not fill the evidence gate until signed. |
 
 ## PASS Gate State
 
@@ -133,6 +134,20 @@ durable GitHub comment timestamp: 2026-05-13T08:03:31Z /
 The next source should be signed evidence lite/full. It must separate facts,
 assumptions, judgments, and preferences, must not import unsigned drafts, and
 must not rehabilitate PR #40 audit output without a new signed source.
+
+## Unsigned Evidence Lite Worksheet
+
+On 2026-05-13, NODE-M added an unsigned evidence lite intake worksheet:
+
+- `30-evals/judgment-harness-observation/cases/JH-002-evidence-lite-intake-worksheet-20260513.md`
+- https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438919918
+
+The worksheet proposes candidate facts, assumptions, judgments, and preferences
+using only accepted signed sources, the observation log, and current GitHub
+issue/PR state. It is draft scaffolding only. It must not be treated as signed
+evidence, final human sign-off, PASS evidence, product baseline, product-code
+authorization, or PR #40 audit rehabilitation until a human signs an evidence
+source.
 
 ## Intake Format
 
