@@ -2,7 +2,7 @@
 
 > Case: JH-002 / 美人计智能体
 > Status: NOT_READY_FOR_PASS - boundary accepted, baseline unsigned
-> Snapshot time: 2026-05-13T11:24:58+08:00
+> Snapshot time: 2026-05-13T11:31:50+08:00
 > Tracker: https://github.com/huanlongAI/tzh-Harness/issues/15
 
 This ledger records the state after the PR #32 engineering-anchor D7
@@ -30,13 +30,14 @@ D7 timer, but it does not replace signed baseline evidence.
 | PR #32 engineering-anchor D7 | `e424879` | observed WARN | Engineering state clean/CI-green; signed baseline absent. |
 | Boundary source intake | Issue #15 comment `4428892028` | accepted for boundary only | Does not sign grill, baseline, evidence, or human sign-off. |
 | Next signed source request | Issue #15 comment `4436877208` | requested only | Request asks for signed grill first, or signed baseline if a durable baseline already exists; not a signed source. |
+| Grill intake worksheet | Issue #15 comment `4436906925` / `JH-002-grill-intake-worksheet-20260513.md` | unsigned draft | Helps Founder sign grill rows; does not fill the grill gate until signed. |
 
 ## PASS Gate State
 
 | Gate | State | Durable evidence | Next action |
 |---|---|---|---|
 | Boundary card signed | accepted | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4428892028 | Keep as boundary only; do not expand into baseline. |
-| Grill decision tree signed | missing | Issue #15 has no signed grill source; request posted at https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4436877208 | Founder/operator posts or links signed grill source. |
+| Grill decision tree signed | missing | Issue #15 has no signed grill source; request posted at https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4436877208 and unsigned worksheet posted at https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4436906925 | Founder/operator posts or links signed grill source. |
 | Signed baseline | missing | Issue #15 has no signed baseline source; request posted at https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4436877208 | Founder/operator signs a durable baseline artifact/comment/commit. |
 | Evidence lite/full | partial | Boundary section can cite the accepted boundary source; other fields remain `TBD` | Fill remaining sections only after signed sources exist. |
 | Human sign-off | missing | No sign-off comment/commit observed | Human signs the specific baseline scope. |
@@ -62,6 +63,18 @@ The request prioritizes a signed `grill` source and allows a signed `baseline`
 only if a durable baseline already exists. The request itself is not signed
 evidence, does not fill the evidence pack, and does not authorize product-code
 work.
+
+## Unsigned Grill Worksheet
+
+On 2026-05-13, NODE-M added an unsigned grill intake worksheet:
+
+- `30-evals/judgment-harness-observation/cases/JH-002-grill-intake-worksheet-20260513.md`
+- https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4436906925
+
+The worksheet proposes discrete grill rows G-001 to G-006. It is only a draft
+aid for Founder/operator signing. It must not be treated as a signed grill
+trace or baseline until a human signs selected rows or links an equivalent
+durable source.
 
 ## Intake Format
 
