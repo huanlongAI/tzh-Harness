@@ -2,7 +2,7 @@
 
 > Case: JH-002 / 美人计智能体
 > Status: NOT_READY_FOR_PASS - boundary, grill, baseline, and evidence accepted; sign-off missing
-> Snapshot time: 2026-05-15T13:54:49+08:00
+> Snapshot time: 2026-05-15T13:58:18+08:00
 > Tracker: https://github.com/huanlongAI/tzh-Harness/issues/15
 
 This ledger records the state after the PR #32 engineering-anchor D7
@@ -37,6 +37,7 @@ D7 timer, but it does not replace final sign-off.
 | Signed observation-only baseline | Issue #15 comment `4438727029` | accepted for baseline only | Signs `observation-baseline-v1-20260513`; does not authorize product-code work or count as evidence/full sign-off. |
 | Evidence lite worksheet | Issue #15 comment `4438919918` / `JH-002-evidence-lite-intake-worksheet-20260513.md` | unsigned draft | Helps Founder sign facts, assumptions, judgments, and preferences; does not fill the evidence gate until signed. |
 | Signed evidence lite source | Issue #15 comment `4439096599` | accepted for evidence lite | Signs F-001 to F-006, A-001 to A-003, J-001 to J-003, and P-001 to P-002. |
+| Human sign-off worksheet | Issue #15 comment `4457308139` / `JH-002-human-signoff-intake-worksheet-20260515.md` | unsigned draft | Helps Founder sign current evidence-state acknowledgement; not PASS approval. |
 
 ## PASS Gate State
 
@@ -175,6 +176,18 @@ The next source should be final human sign-off for the current evidence state,
 or signed blocker-resolution evidence if the operator wants to move toward a
 future PASS decision. Do not mark PASS while final sign-off is missing or while
 the signed evidence still records open blockers.
+
+## Unsigned Human Sign-off Worksheet
+
+On 2026-05-15, NODE-M added an unsigned human sign-off worksheet:
+
+- `30-evals/judgment-harness-observation/cases/JH-002-human-signoff-intake-worksheet-20260515.md`
+- https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4457308139
+
+The worksheet proposes sign-off rows S-001 to S-004 for current evidence-state
+acknowledgement only. It is draft scaffolding. It must not be treated as signed
+human sign-off, PASS approval, product baseline, product-code authorization, or
+PR #40 audit rehabilitation until a human signs a durable source.
 
 ## Intake Format
 
