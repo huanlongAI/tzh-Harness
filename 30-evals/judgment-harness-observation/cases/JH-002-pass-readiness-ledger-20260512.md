@@ -1,8 +1,8 @@
 # JH-002 PASS Readiness Ledger - 2026-05-12
 
 > Case: JH-002 / 美人计智能体
-> Status: NOT_READY_FOR_PASS - boundary, grill, and baseline accepted; evidence/sign-off missing
-> Snapshot time: 2026-05-13T16:23:44+08:00
+> Status: NOT_READY_FOR_PASS - boundary, grill, baseline, and evidence accepted; sign-off missing
+> Snapshot time: 2026-05-15T13:54:49+08:00
 > Tracker: https://github.com/huanlongAI/tzh-Harness/issues/15
 
 This ledger records the state after the PR #32 engineering-anchor D7
@@ -13,10 +13,11 @@ unsigned cross-conversation content.
 
 `WARN` for the PR #32 engineering-anchor D7 observation.
 
-JH-002 remains unavailable for `PASS` because boundary, grill, and the
-observation-only baseline are accepted, but evidence lite/full and final human
-sign-off remain missing. Engineering evidence is stable enough to stop waiting
-on the PR #32 D7 timer, but it does not replace signed evidence or sign-off.
+JH-002 remains unavailable for `PASS` because boundary, grill, the
+observation-only baseline, and evidence lite are accepted, but final human
+sign-off remains missing and the signed evidence still records open external
+blockers. Engineering evidence is stable enough to stop waiting on the PR #32
+D7 timer, but it does not replace final sign-off.
 
 ## Completed Engineering Observations
 
@@ -35,6 +36,7 @@ on the PR #32 D7 timer, but it does not replace signed evidence or sign-off.
 | Observation-only baseline worksheet | Issue #15 comment `4438621264` / `JH-002-observation-baseline-intake-worksheet-20260513.md` | unsigned draft | Helps Founder sign observation-only baseline; does not fill the baseline gate until signed. |
 | Signed observation-only baseline | Issue #15 comment `4438727029` | accepted for baseline only | Signs `observation-baseline-v1-20260513`; does not authorize product-code work or count as evidence/full sign-off. |
 | Evidence lite worksheet | Issue #15 comment `4438919918` / `JH-002-evidence-lite-intake-worksheet-20260513.md` | unsigned draft | Helps Founder sign facts, assumptions, judgments, and preferences; does not fill the evidence gate until signed. |
+| Signed evidence lite source | Issue #15 comment `4439096599` | accepted for evidence lite | Signs F-001 to F-006, A-001 to A-003, J-001 to J-003, and P-001 to P-002. |
 
 ## PASS Gate State
 
@@ -43,8 +45,8 @@ on the PR #32 D7 timer, but it does not replace signed evidence or sign-off.
 | Boundary card signed | accepted | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4428892028 | Keep as boundary only; do not expand into baseline. |
 | Grill decision tree signed | accepted | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438289822 | Accepted rows G-001 to G-003 only; G-004 to G-006 remain unsigned draft unless later signed. |
 | Signed baseline | accepted | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4438727029 | Keep as observation-only baseline; do not treat as product baseline. |
-| Evidence lite/full | partial | Boundary, grill, and baseline sections can cite accepted signed sources; facts/assumptions/judgments/preferences evidence remains `TBD` | Collect signed evidence lite/full source without importing unsigned drafts. |
-| Human sign-off | missing | No final PASS/sign-off comment/commit observed | Human signs the specific review/sign-off scope after evidence is complete. |
+| Evidence lite/full | accepted | https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4439096599 | Evidence source signs F/A/J/P rows; recheck blocker states before any PASS decision. |
+| Human sign-off | missing | No final PASS/sign-off comment/commit observed | Human signs the specific review/sign-off scope after evidence is complete and blocker state is understood. |
 | 24h / 72h / 7d observations | partial | Engineering observations exist; signed-baseline intake is now recorded | Continue observations only from durable signed/evidence sources. |
 | No unsigned source promotion | holding | Observations explicitly preserve this boundary | Continue excluding drafts, AI output, process notes, and chats. |
 | Downstream dispatch after sign-off | not satisfied | Engineering cleanup happened before signed product baseline exists | Do not open new product-code PRs until a signed baseline creates a concrete task. |
@@ -129,12 +131,6 @@ The comment body timestamp field used a placeholder, so audit timing uses the
 durable GitHub comment timestamp: 2026-05-13T08:03:31Z /
 2026-05-13T16:03:31+08:00.
 
-## Current Next Source
-
-The next source should be signed evidence lite/full. It must separate facts,
-assumptions, judgments, and preferences, must not import unsigned drafts, and
-must not rehabilitate PR #40 audit output without a new signed source.
-
 ## Unsigned Evidence Lite Worksheet
 
 On 2026-05-13, NODE-M added an unsigned evidence lite intake worksheet:
@@ -148,6 +144,37 @@ issue/PR state. It is draft scaffolding only. It must not be treated as signed
 evidence, final human sign-off, PASS evidence, product baseline, product-code
 authorization, or PR #40 audit rehabilitation until a human signs an evidence
 source.
+
+## Accepted Evidence Lite Source
+
+On 2026-05-13, Founder signed evidence lite rows:
+
+- https://github.com/huanlongAI/tzh-Harness/issues/15#issuecomment-4439096599
+
+Accepted rows:
+
+- Facts: F-001 to F-006.
+- Assumptions: A-001 to A-003.
+- Judgments: J-001 to J-003.
+- Preferences: P-001 to P-002.
+
+The comment body timestamp field used a placeholder, so source timing uses the
+durable GitHub comment timestamp: 2026-05-13T08:52:33Z /
+2026-05-13T16:52:33+08:00.
+
+Current recheck on 2026-05-15:
+
+- `hl-scene-app#21` remains open.
+- `tech-cofounder-bot#2` remains open.
+- PR #40 remains merged, while its dahuizi/Codex Runner audit lane remains
+  rejected/inconclusive in JH-002 evidence.
+
+## Current Next Source
+
+The next source should be final human sign-off for the current evidence state,
+or signed blocker-resolution evidence if the operator wants to move toward a
+future PASS decision. Do not mark PASS while final sign-off is missing or while
+the signed evidence still records open blockers.
 
 ## Intake Format
 
